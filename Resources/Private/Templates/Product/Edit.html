@@ -1,0 +1,33 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'list', controller: 'SimpleShop')}">Back</a>
+    <a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'cart', controller: 'SimpleShop')}">Cart</a>
+    <div style="clear: both;"></div>
+
+    <f:form action="update" controller="Product" name="product" object="{product}">
+        <f:form.hidden property="uid" />
+        <table class="ce-table table">
+            <tr>
+                <td><label for="tx-simpleshop-name"><f:translate key="property.name">[name]</f:translate>:</label></td>
+            </tr>
+            <tr>
+                <td><f:form.textfield id="tx-simpleshop-name" property="name" /></td>
+            </tr>
+            <tr>
+                <td><label for="tx-simpleshop-description"><f:translate key="property.description">[description]</f:translate>:</label></td>
+            </tr>
+            <tr>
+                <td><f:form.textarea id="tx-simpleshop-description" property="description" /></td>
+            </tr>
+            <tr>
+                <td><label for="tx-simpleshop-price"><f:translate key="property.price">[price]</f:translate>:</label></td>
+            </tr>
+            <tr>
+                <td><f:form.textfield id="tx-simpleshop-price" property="price" /></td>
+            </tr>
+        </table>
+
+        <f:form.submit class="button-partial btn btn-primary" value="{f:translate(key: 'submit', default: '[submit]')}"><input class="button" type="submit" name="" value="Submit" /></f:form.submit>
+     </f:form>
+
+
+</html>

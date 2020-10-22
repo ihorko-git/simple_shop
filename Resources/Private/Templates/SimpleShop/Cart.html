@@ -1,0 +1,26 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'list')}">Back</a>
+<a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'list')}">Checkout</a>
+<table class="ce-table table  table-hover">
+    <thead>
+        <tr>
+            <th>Product name</th>
+            <th>Count</th>
+            <th>Price <small>(per item)</small></th>
+            <th></th>
+        </tr>
+    </thead>
+    <f:for each="{items}" as="item">
+        <tr>
+            <td align="top">{item.product.name}</td>
+            <td align="top">
+                {item.count}
+            </td>
+            <td align="top">{item.product.price}</td>
+            <td align="top"><a href="{f:uri.action(action: 'removeFromCart', arguments: '{uid: item.product.uid}')}">Remove</a></td>
+        </tr>
+    </f:for>
+</table>
+
+
+</html>

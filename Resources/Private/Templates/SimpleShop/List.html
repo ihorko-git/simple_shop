@@ -1,0 +1,25 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+<a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'cart')}">Cart</a>
+<table class="ce-table table  table-hover">
+    <thead>
+        <tr>
+            <th>Product name</th>
+            <th>Product description</th>
+            <th>Price</th>
+            <th></th>
+        </tr>
+    </thead>
+    <f:for each="{products}" as="product">
+        <tr>
+            <td align="top"><a href="{f:uri.action(action: 'show', arguments: '{uid: product.uid}')}">{product.name}</a></td>
+            <td align="top">
+                <f:format.crop maxCharacters="100">{product.description}</f:format.crop>
+            </td>
+            <td align="top">{product.price}</td>
+            <td align="top"><a href="{f:uri.action(controller: 'Product', action: 'edit', arguments: '{product: product}')}">Edit</a></td>
+        </tr>
+    </f:for>
+</table>
+
+
+</html>

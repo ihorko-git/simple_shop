@@ -1,0 +1,28 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers">
+    <a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'list')}">Back</a>
+    <a class="button-partial btn btn-outline-dark" href="{f:uri.action(action: 'cart')}">Cart</a>
+    <div style="clear: both;"></div>
+    <div class="row">
+        <div class="col-lg-2">
+            <f:for each="{product.images}" as="image" >
+                <f:image src="{image.uid}" alt="{image.originalResorce.alternative}" width='101' height="67" treatIdAsReference="1"/>
+            </f:for >
+        </div>
+        <div class="col-lg-8">
+            <table class="ce-table table">
+                <tr>
+                    <th>{product.name}</th>
+                </tr>
+                <tr>
+                    <td>{product.description}</td>
+                </tr>
+                <tr>
+                    <td>{product.price}</td>
+                </tr>
+            </table>
+            <a href="{f:uri.action(action: 'buy', arguments: '{uid: product.uid}')}" class="button-partial btn btn-primary">Buy</a>
+        </div>
+
+
+    </div>
+</html>
